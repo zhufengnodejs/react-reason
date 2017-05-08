@@ -10,7 +10,7 @@
 <script src="index.js"></script>
 <script type="text/javascript">
     let like = document.querySelector('.like');
-    like.appendChild(new LikeButton().render())
+    new LikeButton({name:'刘德华'}).$mount(like);
 </script>
 </body>
 </html>
