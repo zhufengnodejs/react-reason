@@ -6,21 +6,15 @@
 </head>
 <body>
 <div class="like">
-    <buton class="like-btn">
+    <button class="like-btn">
         <span class="like-text">点赞</span>
-    </buton>
+    </button>
 </div>
+<script src="index.js"></script>
 <script type="text/javascript">
-    let likeBtn = document.querySelector('.like-btn');
-    let btnTxt = document.querySelector('.like-text');
-    let isLiked = false;
-    likeBtn.addEventListener('click',function () {
-        isLiked = !isLiked;
-        if(isLiked)
-            btnTxt.innerHTML = '取消';
-        else
-            btnTxt.innerHTML = '点赞';
-    })
+    let like = document.querySelector('.like');
+    like.innerHTML = new LikeButton().render();
+    like.innerHTML += new LikeButton().render();
 </script>
 </body>
 </html>
