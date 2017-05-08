@@ -8,18 +8,22 @@ class LikeButton{
     constructor(){
         this.state = {isLiked:false};
     }
+    setState(state){
+        this.state = state;
+        let oldEle = this.ele;
+        let parent = oldEle.parentElement;
+        this.render();
+        parent.replaceChild(this.ele,oldEle);
+    }
     handleClick(){
-        let btnTxt = document.querySelector('.like-text');
-        this.state.isLiked = !this.state.isLiked;
-        if(this.state.isLiked)
-            btnTxt.innerHTML = '取消';
-        else
-            btnTxt.innerHTML = '点赞';
+        this.setState({
+            isLiked:!this.state.isLiked
+        })
     }
     render(){
         this.ele = createDOMFromString(`
              <button class="like-btn">
-                <span class="like-text">点赞</span>
+                <span class="like-text">${this.state.isLiked?'点赞':'取消'}</span>
              </button>
             `);
         this.ele.addEventListener('click',this.handleClick.bind(this));
