@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="like">
+    <buton class="like-btn">
+        <span class="like-text">点赞</span>
+    </buton>
+</div>
+<script type="text/javascript">
+    let likeBtn = document.querySelector('.like-btn');
+    let btnTxt = document.querySelector('.like-text');
+    let isLiked = false;
+    likeBtn.addEventListener('click',function () {
+        isLiked = !isLiked;
+        if(isLiked)
+            btnTxt.innerHTML = '取消';
+        else
+            btnTxt.innerHTML = '点赞';
+    })
+</script>
+</body>
+</html>
