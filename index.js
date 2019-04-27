@@ -23,22 +23,22 @@ class Component{
         container.appendChild(this.ele);
     }
 }
-class LikeButton extends Component{
+class CounterButton extends Component{
     constructor(props){
         super(props);
-        this.state = {isLiked:false};
+        this.state = {number:0};
     }
 
     handleClick(){
         this.setState({
-            isLiked:!this.state.isLiked
+            number:this.state.number+1
         })
     }
     render(){
         return (
             `
-             <button class="like-btn">
-                <span class="like-text">为${this.props.name} ${this.state.isLiked?'取消':'点赞'}</span>
+             <button>
+                <span>${this.state.number}</span>
              </button>
             `
         )
